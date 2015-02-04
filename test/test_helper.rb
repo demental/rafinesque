@@ -2,6 +2,10 @@ require 'minitest/autorun'
 
 require 'rafinesque'
 
-require 'byebug'
+begin
+  require 'byebug'
+rescue LoadError
+  # If you want to debug, gem install byebug
+end
 
 Rafinesque::setup
