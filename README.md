@@ -3,6 +3,7 @@ Customize your application semantics.
 
 [![Code Climate](https://codeclimate.com/github/demental/rafinesque/badges/gpa.svg)](https://codeclimate.com/github/demental/rafinesque)
 [![Build Status](https://travis-ci.org/demental/rafinesque.svg)](https://travis-ci.org/demental/rafinesque)
+[![Dependency Status](https://gemnasium.com/demental/rafinesque.svg)](https://gemnasium.com/demental/rafinesque)
 
 ## What is it ?
 You created an Ruby application, which functional specifications can be applied to various domains.
