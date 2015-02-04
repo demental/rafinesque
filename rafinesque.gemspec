@@ -1,4 +1,6 @@
-require_relative "lib/rafinesque/version"
+$: << File.expand_path("../lib", __FILE__)
+
+require "rafinesque/version"
 
 Gem::Specification.new do |s|
   s.name        = "rafinesque"
@@ -18,3 +20,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'i18n'
 end
+
