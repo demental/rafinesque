@@ -1,5 +1,3 @@
-require 'i18n'
-
 module Rafinesque
   module I18nBackend
 

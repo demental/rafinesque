@@ -1,8 +1,8 @@
-require "rafinesque/version"
+require_relative "lib/rafinesque/version"
 
 Gem::Specification.new do |s|
   s.name        = "rafinesque"
-  s.version     = Rafinesque::Version
+  s.version     = Rafinesque::VERSION
   s.date        = "2015-02-03"
   s.summary     = "Customize your application semantics."
   s.description = <<-DESC.gsub(/^\s+/, '')
