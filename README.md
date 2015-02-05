@@ -6,12 +6,12 @@ Customize your application semantics.
 [![Dependency Status](https://gemnasium.com/demental/rafinesque.svg)](https://gemnasium.com/demental/rafinesque)
 
 ## What is it ?
-You created an Ruby application, which functional specifications can be applied to various domains.
+You have created an Ruby application, which functional specifications can be applied to various domains.
 
 *Problem* : the texts in your app are somewhat tied to a specific domain, unless you add many placeholders to your translations yml files, and, more problematic, inject values to these placeholders everywhere in your views, mailers ... and so on...
 
 ### Example
-You created a classified app, specialized in real estate. Some application.en.yml file look like this:
+Let's say you have a classified app, specialized in real estate. Some application.en.yml file look like this:
 
 ```yml
 en:
@@ -22,7 +22,7 @@ en:
 
 ```
 
-Now you want to fork your project and create a classified to sell yachts. I have to update your translations :
+Now you want to fork your project and create a classified to sell yachts. Therefore you have to update your translations :
 
 ```yml
 en:
@@ -33,7 +33,7 @@ en:
 
 ```
 
-You now will have issues maintaining your fork, because it's a fork. So you decide to put placeholders and inject variables in your views:
+You will now have issues maintaining this fork, because it's a fork. So you decide to put placeholders and inject variables in your views:
 
 
 ```yml
@@ -71,7 +71,7 @@ Here comes Rafinesque. Rafinesque allows you to make custom, localized placehold
   ENV['semantics']= "{\"fr\":{\"Real estate\":\"Marine\",\"home\":\"yacht\",\"maison\":\"bateau\"", \"fr\":{\"l'immobilier\":\"la marine\",\"maison\":\"bateau\""
 ```
 
-3. Insert some placeholders in your yml translations files (must be surrounded with $). The important thing to unserstand is that these placeholders are not variables, they are some real words. This allows you to make sure that you handle all the syntactical odds and ends of your language :
+3. Insert some placeholders in your yml translations files (must be surrounded with $). The important thing to understand is that these placeholders are not variables, they are some real words. This allows you to make sure that you handle all the syntactical odds and ends of your language :
 
 ```yml
 en:
@@ -83,6 +83,7 @@ en:
 
 ### Roadmap
 
+* Be smarter about variants (e.g. automatically handle titleized versions)
 * Add more test (test and extract the currently private recursive_map method).
 * Add more storage systems than ENV (database or yml files for example).
 * Allow to customize placeholders syntax.
