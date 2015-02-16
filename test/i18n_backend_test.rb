@@ -1,7 +1,6 @@
 require "test_helper"
 
 class Rafinesque::I18nBackendTest < Minitest::Test
-
   def test_has_default_interpolations
     setup!
     I18n.with_locale(:wk) do

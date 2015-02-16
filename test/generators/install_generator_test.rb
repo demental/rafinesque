@@ -1,7 +1,6 @@
 require "test_helper"
 require "generators/rafinesque/install_generator"
 class Rafinesque::InstallGeneratorTest < Rails::Generators::TestCase
-
   tests Rafinesque::Generators::InstallGenerator
 
   destination File.expand_path("../../tmp", __FILE__)
