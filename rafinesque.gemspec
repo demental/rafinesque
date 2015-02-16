@@ -14,7 +14,8 @@ Gem::Specification.new do |s|
   DESC
   s.authors     = ["Arnaud Sellenet"]
   s.email       = "arnodmental@gmail.com"
-  s.files       = ["lib/rafinesque.rb", "lib/rafinesque/i18n_backend.rb"]
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- test/*`.split("\n")
   s.homepage    = "https://github.com/demental/rafinesque"
   s.license     = "MIT"
 
