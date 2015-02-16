@@ -12,7 +12,7 @@ class Rafinesque::I18nBackendTest < Minitest::Test
     setup!
     I18n.with_locale(:wk) do
       assert_equal I18n.t("something_with_placeholder", name: "John"),
-        "Hello John, MyBrand is for the specialist you dream to be"
+                   "Hello John, MyBrand is for the specialist you dream to be"
     end
   end
 
@@ -31,8 +31,9 @@ class Rafinesque::I18nBackendTest < Minitest::Test
   def setup!
     I18n.config.enforce_available_locales = false
     I18n.backend.default_semantics = semantics_json
-    I18n.backend.store_translations(:wk,
-      "something" => "MyBrand is for specialists",
+    I18n.backend.store_translations(
+      :wk,
+      "something"                  => "MyBrand is for specialists",
       "something_with_placeholder" => "Hello %{name}, $brand$ is for $the expert$ you dream to be"
     )
   end
