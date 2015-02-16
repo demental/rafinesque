@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class Rafinesque::SetupTest < Minitest::Test
   def test_rafinesque_backend_is_automatically_included

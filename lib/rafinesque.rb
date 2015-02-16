@@ -1,5 +1,5 @@
-require 'i18n'
-require 'rafinesque/i18n_backend'
+require "i18n"
+require "rafinesque/i18n_backend"
 
 module Rafinesque
 
