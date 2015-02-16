@@ -12,7 +12,7 @@ You have created an Ruby application, which functional specifications can be app
 *Problem* : the texts in your app are somewhat tied to a specific domain, unless you add many placeholders to your translations yml files, and, more problematic, inject values to these placeholders everywhere in your views, mailers ... and so on...
 
 ### Example
-Let's say you have a classified app, specialized in real estate. Some application.en.yml file look like this:
+Let's say you have a classified app, specialized in real estate. Your application.en.yml file looks like this:
 
 ```yml
 en:
@@ -66,13 +66,24 @@ Here comes Rafinesque. Rafinesque allows you to make custom, localized placehold
   gem "rafinesque"
 ```
 
-2. Add your semantics in a json string, in ENV (you may use Figaro for example, to load a yaml into ENV)
+2. Install rafinesque
+* On rails projects, run ```rails generate rafinesque:install```
+* on non-Rails, include the rafinesque module somewhere in your bootstrap sequence :
+
+```ruby
+
+require 'rafinesque/i18n_backend'
+I18n::Backend::Simple.include(Rafinesque::I18nBackend)
+
+```
+
+3. Add your semantics in a json string, in ENV (you may use Figaro for example, to load a yaml into ENV)
 
 ```ruby
   ENV['semantics']= "{\"fr\":{\"Real estate\":\"Marine\",\"home\":\"yacht\",\"maison\":\"bateau\"", \"fr\":{\"l'immobilier\":\"la marine\",\"maison\":\"bateau\""
 ```
 
-3. Insert some placeholders in your yml translations files (must be surrounded with $). The important thing to understand is that these placeholders are not variables, they are some real words. This allows you to make sure that you handle all the syntactical odds and ends of your language :
+4. Insert some placeholders in your yml translations files (must be surrounded with $). The important thing to understand is that these placeholders are not variables, they are some real words. This allows you to make sure that you handle all the syntactical odds and ends of your language :
 
 ```yml
 en:
@@ -88,7 +99,6 @@ en:
 * Add more test (test and extract the currently private recursive_map method).
 * Add more storage systems than ENV (database or yml files for example).
 * Allow to customize placeholders syntax.
-* Add a rails generator.
 * Create rake tasks to extract existing placeholders.
 * Make sure it can be used with other I18n backend than the default one (I18n::Backend::Simple).
 
