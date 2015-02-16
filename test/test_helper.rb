@@ -1,12 +1,12 @@
-require 'codeclimate-test-reporter'
+require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
-require 'minitest/autorun'
+require "minitest/autorun"
 
-require 'rafinesque'
+require "rafinesque"
 
 begin
-  require 'byebug'
+  require "byebug"
 rescue LoadError
   # If you want to debug, gem install byebug
 end
