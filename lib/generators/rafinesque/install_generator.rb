@@ -6,7 +6,9 @@ module Rafinesque
 
       source_root File.expand_path('../../../rafinesque', __FILE__)
 
-      def start
+      desc "Creates a Rafinesque initializer in your application config/ dir."
+
+      def copy_initializer
         copy_file 'initializer.rb', 'config/initializers/rafinesque.rb'
       end
     end

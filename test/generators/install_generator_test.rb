@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'generators/rafinesque/install'
+require 'generators/rafinesque/install_generator'
 
 class Rafinesque::InstallGeneratorTest < Rails::Generators::TestCase
 
