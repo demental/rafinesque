@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rafinesque (0.0.0)
+    rafinesque (0.0.1)
       i18n
 
 GEM
