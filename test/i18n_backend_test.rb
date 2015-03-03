@@ -8,6 +8,13 @@ class Rafinesque::I18nBackendTest < Minitest::Test
     end
   end
 
+  def test_replaces_multiple_occurences
+    setup!
+    I18n.with_locale(:wk) do
+      assert_equal I18n.t("something_multi"), "MyBrand by specialists for specialists"
+    end
+  end
+
   def test_still_handles_interpolations
     setup!
     I18n.with_locale(:wk) do
@@ -33,7 +40,8 @@ class Rafinesque::I18nBackendTest < Minitest::Test
     I18n.backend.default_semantics = semantics_json
     I18n.backend.store_translations(
       :wk,
-      "something"                  => "MyBrand is for specialists",
+      "something"                  => "$brand$ is for $experts$",
+      "something_multi"            => "$brand$ by $experts$ for $experts$",
       "something_with_placeholder" => "Hello %{name}, $brand$ is for $the expert$ you dream to be"
     )
   end
