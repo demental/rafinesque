@@ -33,7 +33,7 @@ module Rafinesque
 
     def fill_placeholders(string, locale)
       semantics[locale.to_s].each_pair do |search,replace|
-        string.sub!("$#{search}$", replace)
+        string.gsub!("$#{search}$", replace)
       end
       string
     end
